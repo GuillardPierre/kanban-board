@@ -1,8 +1,4 @@
-let dragged = null;
 function enableDragAndDrop() {
-  const allCards = document.querySelectorAll('.card');
-  const columns = document.querySelectorAll('.column');
-
   columns.forEach((column) => {
     column.classList.add('dropzone');
 

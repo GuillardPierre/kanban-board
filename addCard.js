@@ -76,5 +76,6 @@ window.addEventListener('DOMContentLoaded', () => {
     todoCardColumn.appendChild(card);
     addEventDraggable(card);
     createCloseButtonForCard(card);
+    allCards = document.querySelectorAll('.card');
   }
 });
