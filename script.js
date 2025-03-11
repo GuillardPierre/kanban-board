@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   const sortByPriorityBtn = document.getElementById('sortByPriorityBtn');
 
+  
   // Éventuellement, on écoute les événements
   addCardBtn.addEventListener('click', () => {
     // ...
