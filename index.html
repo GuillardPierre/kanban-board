@@ -16,8 +16,8 @@
         <textarea id="description" name="description" rows="4" cols="20" placeholder="DESCRIPTION"></textarea><br><br>
 
       <!-- First Select Dropdown -->
-      <select id="priority" name="priority">
-          <option value="priority">PRIORITY</option>
+      <select id="priority" name="priority" required>
+          <option value="" disabled selected>PRIORITY</option>
           <option value="low">LOW</option>
           <option value="medium">MEDIUM</option>
           <option value="high">HIGH</option>
@@ -25,7 +25,7 @@
 
       <!-- Submit Button -->
          <button type="submit">SUBMIT</button>
-         <button type="cancel" id="cancelBtn">CANCEL</button>
+         <button type="button" id="cancelBtn">CANCEL</button>
   </form>
 </div>
 <div class="hidden formContainer">

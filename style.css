@@ -54,7 +54,7 @@ h1 {
   flex-direction: column;
   width: fit-content;
   padding: 2rem;
-  border: 1px solid pink;
+  border: 2px solid black;
   position:absolute;
   background-color: white;
   top: 60%;

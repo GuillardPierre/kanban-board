@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const todoCardColumn = document.querySelector('.column[data-status="todo"]');
     const addCardForm = document.querySelector("#addCardForm");
     const addCardCancelbtn = document.querySelector("#cancelBtn");
+    let currentId = 5;
 
     // Éventuellement, on écoute les événements
     addCardBtn.addEventListener("click", () => {
@@ -24,31 +25,42 @@ window.addEventListener("DOMContentLoaded", () => {
 
     addCardForm.addEventListener("submit", (event) => {
         event.preventDefault();
-        const formData = new FormData(addCardForm);
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        const priority = document.getElementById("priority").value;
+        const dataForm = { title, description, priority };
+        console.log(dataForm);
+        addCard(dataForm);
+
+        // Clear fields
+        addCardForm.reset();
+        addCardFormContainer.classList.add("hidden");
     });
 
     function addCard(data) {
 
-        // Créer un nouvel élément div
+        // Card
         const card = document.createElement('div');
         card.className = 'card';
-        card.setAttribute('data-id', '1'); // Incrémenter
-        card.setAttribute('data-priority', 'high');
+        card.setAttribute('data-id', currentId);
+        card.setAttribute('data-priority', data.priority);
 
-        // Créer l'élément h3
+        currentId++;
+
+        // h3
         const heading = document.createElement('h3');
-        heading.textContent = 'Tâche';
+        heading.textContent = data.title;
 
-        // Créer l'élément p
+        // paragraph
         const paragraph = document.createElement('p');
-        paragraph.textContent = 'Contenu de la tâche';
+        paragraph.textContent = data.description;
 
-        // Ajouter les éléments h3 et p à la div card
+        // add h3 & paragraph to card
         card.appendChild(heading);
         card.appendChild(paragraph);
 
-        // Ajouter la carte au body ou à un autre conteneur
-        todoCardColumn.body.appendChild(card);
+        // add card to column
+        todoCardColumn.appendChild(card);
     };
-
-});
+}
+);
