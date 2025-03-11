@@ -1,19 +1,4 @@
 console.log('Kanban JS loaded...');
-
-function addEventDraggable(card) {
-  card.setAttribute('draggable', 'true');
-
-  card.addEventListener('dragstart', (event) => {
-    dragged = event.target;
-    event.target.classList.add('dragging');
-  });
-
-  card.addEventListener('dragend', (event) => {
-    event.target.classList.remove('dragging');
-    dragged = null;
-  });
-}
-
 // Exemple éventuel de structure
 window.addEventListener('DOMContentLoaded', () => {
   // Ici, on récupère les éléments du DOM
@@ -76,5 +61,6 @@ window.addEventListener('DOMContentLoaded', () => {
     todoCardColumn.appendChild(card);
     addEventDraggable(card);
     createCloseButtonForCard(card);
+    allCards = document.querySelectorAll('.card');
   }
 });

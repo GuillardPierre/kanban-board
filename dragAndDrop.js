@@ -1,56 +1,50 @@
-let dragged = null;
-function enableDragAndDrop() {
-  const allCards = document.querySelectorAll('.card');
-  const columns = document.querySelectorAll('.column');
+columns.forEach((column) => {
+  column.classList.add('dropzone');
 
-  columns.forEach((column) => {
-    column.classList.add('dropzone');
+  column.addEventListener('dragover', (event) => {
+    event.preventDefault();
+  });
 
-    column.addEventListener('dragover', (event) => {
+  column.addEventListener('dragenter', (event) => {
+    event.currentTarget.classList.add('dragover');
+  });
+
+  column.addEventListener('dragleave', (event) => {
+    event.currentTarget.classList.remove('dragover');
+  });
+
+  column.addEventListener('drop', (event) => {
+    if (dragged) {
       event.preventDefault();
-    });
-
-    column.addEventListener('dragenter', (event) => {
-      event.currentTarget.classList.add('dragover');
-    });
-
-    column.addEventListener('dragleave', (event) => {
+      event.currentTarget.appendChild(dragged);
+      dragged.classList.remove('dragging');
       event.currentTarget.classList.remove('dragover');
-    });
-
-    column.addEventListener('drop', (event) => {
-      if (dragged) {
-        event.preventDefault();
-        event.currentTarget.appendChild(dragged);
-        dragged.classList.remove('dragging');
-        event.currentTarget.classList.remove('dragover');
-        const newStatus = event.currentTarget.getAttribute('data-status');
-        dragged.setAttribute('data-status', newStatus);
-        console.log(dragged);
-
-        saveBoardState();
-        dragged = null;
-      }
-    });
-  });
-
-  allCards.forEach((card) => {
-    addEventDraggable(card);
-  });
-
-  function addEventDraggable(card) {
-    card.setAttribute('draggable', 'true');
-
-    card.addEventListener('dragstart', (event) => {
-      dragged = event.target;
+      const newStatus = event.currentTarget.getAttribute('data-status');
+      dragged.setAttribute('data-status', newStatus);
       console.log(dragged);
 
-      event.target.classList.add('dragging');
-    });
-
-    card.addEventListener('dragend', (event) => {
-      event.target.classList.remove('dragging');
+      saveBoardState();
       dragged = null;
-    });
-  }
+    }
+  });
+});
+
+allCards.forEach((card) => {
+  addEventDraggable(card);
+});
+
+function addEventDraggable(card) {
+  card.setAttribute('draggable', 'true');
+
+  card.addEventListener('dragstart', (event) => {
+    dragged = event.target;
+    console.log(dragged);
+
+    event.target.classList.add('dragging');
+  });
+
+  card.addEventListener('dragend', (event) => {
+    event.target.classList.remove('dragging');
+    dragged = null;
+  });
 }
