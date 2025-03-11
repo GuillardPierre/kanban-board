@@ -23,6 +23,9 @@ columns.forEach((column) => {
     event.currentTarget.appendChild(dragged);
     dragged.classList.remove('dragging');
     event.currentTarget.classList.remove('dragover');
+    const newStatus = event.currentTarget.getAttribute('data-status');
+    dragged.setAttribute('data-status', newStatus);
+    console.log(dragged.getAttribute('data-status'));
   });
 });
 
