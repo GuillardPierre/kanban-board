@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('.card');
 
   cards.forEach((card) => {
-    createCloseButtonForCard(card)
+    createCloseButtonForCard(card);
   });
 });
 
@@ -14,5 +14,6 @@ function createCloseButtonForCard(card) {
   closeButton.addEventListener('click', (event) => {
     event.stopPropagation();
     card.remove();
+    saveBoardState();
   });
 }
