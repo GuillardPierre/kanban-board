@@ -7,51 +7,74 @@
   </head>
   <body>
     <h1>Kanban Board</h1>
-<div class="hidden formContainer">
-    <form id="addCardForm">
-      <!-- First Input Field -->
-      <input type="text" id="title" name="title" placeholder="TITLE"><br><br>
+    <div class="hidden formContainer">
+      <form id="addCardForm">
+        <!-- First Input Field -->
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="TITLE"
+        /><br /><br />
 
-      <!-- Second Input Field -->
-        <textarea id="description" name="description" rows="4" cols="20" placeholder="DESCRIPTION"></textarea><br><br>
+        <!-- Second Input Field -->
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          cols="20"
+          placeholder="DESCRIPTION"
+        ></textarea
+        ><br /><br />
 
-      <!-- First Select Dropdown -->
-      <select id="priority" name="priority" required>
+        <!-- First Select Dropdown -->
+        <select id="priority" name="priority" required>
           <option value="" disabled selected>PRIORITY</option>
           <option value="low">LOW</option>
           <option value="medium">MEDIUM</option>
-          <option value="high">HIGH</option>
-      </select><br><br>
+          <option value="high">HIGH</option></select
+        ><br /><br />
 
-      <!-- Submit Button -->
-         <button type="submit">SUBMIT</button>
-         <button type="button" id="cancelBtn">CANCEL</button>
-  </form>
-</div>
-<div class="hidden formContainer">
-    <form id="addCardForm">
-      <!-- First Input Field -->
-      <input type="text" id="title" name="title" placeholder="TITLE"><br><br>
+        <!-- Submit Button -->
+        <button type="submit">SUBMIT</button>
+        <button type="button" id="cancelBtn">CANCEL</button>
+      </form>
+    </div>
+    <div class="hidden formContainer">
+      <form id="addCardForm">
+        <!-- First Input Field -->
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="TITLE"
+        /><br /><br />
 
-      <!-- Second Input Field -->
-        <textarea id="description" name="description" rows="4" cols="20" placeholder="DESCRIPTION"></textarea><br><br>
+        <!-- Second Input Field -->
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          cols="20"
+          placeholder="DESCRIPTION"
+        ></textarea
+        ><br /><br />
 
-      <!-- First Select Dropdown -->
-      <select id="priority" name="priority">
+        <!-- First Select Dropdown -->
+        <select id="priority" name="priority">
           <option value="priority">PRIORITY</option>
           <option value="low">LOW</option>
           <option value="medium">MEDIUM</option>
-          <option value="high">HIGH</option>
-      </select><br><br>
+          <option value="high">HIGH</option></select
+        ><br /><br />
 
-      <!-- Submit Button -->
-       <div class="formBtnContainer">
-         <button type="submit">SUBMIT</button>
-         <button type="cancel" id="cancelBtn">CANCEL</button>
-      </div>
-        
-  </form>
-</div>
+        <!-- Submit Button -->
+        <div class="formBtnContainer">
+          <button type="submit">SUBMIT</button>
+          <button type="cancel" id="cancelBtn">CANCEL</button>
+        </div>
+      </form>
+    </div>
     <div class="kanban">
       <div class="column" data-status="todo">
         <h2>To Do</h2>
@@ -96,6 +119,7 @@
     <script src="priorityRanking.js"></script>
     <script src="dragAndDrop.js"></script>
     <script src="addCard.js"></script>
+    <script src="searchInput.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
