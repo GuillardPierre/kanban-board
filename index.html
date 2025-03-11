@@ -8,11 +8,79 @@
   </head>
   <body>
     <h1>Kanban Board</h1>
+    <div class="hidden formContainer">
+      <form id="addCardForm">
+        <!-- First Input Field -->
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="TITLE"
+        /><br /><br />
 
+        <!-- Second Input Field -->
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          cols="20"
+          placeholder="DESCRIPTION"
+        ></textarea
+        ><br /><br />
+
+        <!-- First Select Dropdown -->
+        <select id="priority" name="priority" required>
+          <option value="" disabled selected>PRIORITY</option>
+          <option value="low">LOW</option>
+          <option value="medium">MEDIUM</option>
+          <option value="high">HIGH</option></select
+        ><br /><br />
+
+        <!-- Submit Button -->
+        <button type="submit">SUBMIT</button>
+        <button type="button" id="cancelBtn">CANCEL</button>
+      </form>
+    </div>
+    <div class="hidden formContainer">
+      <form id="addCardForm">
+        <!-- First Input Field -->
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="TITLE"
+        /><br /><br />
+
+        <!-- Second Input Field -->
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          cols="20"
+          placeholder="DESCRIPTION"
+        ></textarea
+        ><br /><br />
+
+        <!-- First Select Dropdown -->
+        <select id="priority" name="priority">
+          <option value="priority">PRIORITY</option>
+          <option value="low">LOW</option>
+          <option value="medium">MEDIUM</option>
+          <option value="high">HIGH</option></select
+        ><br /><br />
+
+        <!-- Submit Button -->
+        <div class="formBtnContainer">
+          <button type="submit">SUBMIT</button>
+          <button type="cancel" id="cancelBtn">CANCEL</button>
+        </div>
+      </form>
+    </div>
     <div class="kanban">
       <div class="column" data-status="todo">
         <h2>To Do</h2>
         <div class="card" data-id="1" data-priority="high">
+          <!-- <div id="close"></div> -->
           <h3>Tâche 1</h3>
           <p>Contenu de la tâche</p>
         </div>
@@ -25,6 +93,7 @@
       <div class="column" data-status="doing">
         <h2>Doing</h2>
         <div class="card" data-id="3" data-priority="medium">
+          <!-- <div id="close"></div> -->
           <h3>Tâche 3</h3>
           <p>En cours de traitement</p>
         </div>
@@ -33,6 +102,7 @@
       <div class="column" data-status="done">
         <h2>Done</h2>
         <div class="card" data-id="4" data-priority="high">
+          <!-- <div id="close"></div> -->
           <h3>Tâche 4</h3>
           <p>Terminé</p>
         </div>
@@ -49,5 +119,13 @@
       />
       <button id="sortByPriorityBtn">Trier par priorité</button>
     </div>
+
+    <script src="priorityRanking.js"></script>
+    <script src="deleteCard.js"></script>
+    <script src="searchInput.js"></script>
+    <script src="localStorage.js"></script>
+    <script src="script.js"></script>
+    <script src="dragAndDrop.js"></script>
+    <script src="addCard.js"></script>
   </body>
 </html>
