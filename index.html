@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <title>Kanban Board</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="dragAndDrop.js" defer></script>
-    <script src="script.js" defer></script>
   </head>
   <body>
     <h1>Kanban Board</h1>
@@ -13,11 +11,11 @@
     <div class="kanban">
       <div class="column" data-status="todo">
         <h2>To Do</h2>
-        <div class="card" data-id="1" data-priority="high" data-colum="todo">
+        <div class="card" data-id="1" data-priority="low" data-colum="todo">
           <h3>Tâche 1</h3>
           <p>Contenu de la tâche</p>
         </div>
-        <div class="card" data-id="2" data-priority="low" data-colum="todo">
+        <div class="card" data-id="2" data-priority="high" data-colum="todo">
           <h3>Tâche 2</h3>
           <p>Autre contenu</p>
         </div>
@@ -52,6 +50,7 @@
     </div>
 
     <script src="priorityRanking.js"></script>
+    <script src="dragAndDrop.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
