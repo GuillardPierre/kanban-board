@@ -62,5 +62,6 @@ window.addEventListener('DOMContentLoaded', () => {
     addEventDraggable(card);
     createCloseButtonForCard(card);
     allCards = document.querySelectorAll('.card');
+    saveBoardState();
   }
 });
