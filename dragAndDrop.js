@@ -30,6 +30,10 @@ columns.forEach((column) => {
 });
 
 allCards.forEach((card) => {
+  addEventDraggable(card);
+});
+
+function addEventDraggable(card){
   card.setAttribute('draggable', 'true');
 
   card.addEventListener('dragstart', (event) => {
@@ -41,4 +45,4 @@ allCards.forEach((card) => {
     event.target.classList.remove('dragging');
     dragged = null;
   });
-});
+};

@@ -38,7 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     function addCard(data) {
-
+    
         // Card
         const card = document.createElement('div');
         card.className = 'card';
@@ -61,6 +61,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // add card to column
         todoCardColumn.appendChild(card);
+        addEventDraggable(card);
     };
 }
 );
