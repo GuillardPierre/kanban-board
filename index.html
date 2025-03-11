@@ -78,11 +78,12 @@
     <div class="kanban">
       <div class="column" data-status="todo">
         <h2>To Do</h2>
-        <div class="card" data-id="1" data-priority="low" data-colum="todo">
+        <div class="card" data-id="1" data-priority="high">
+          <!-- <div id="close"></div> -->
           <h3>Tâche 1</h3>
           <p>Contenu de la tâche</p>
         </div>
-        <div class="card" data-id="2" data-priority="high" data-colum="todo">
+        <div class="card" data-id="2" data-priority="low">
           <h3>Tâche 2</h3>
           <p>Autre contenu</p>
         </div>
@@ -90,7 +91,8 @@
 
       <div class="column" data-status="doing">
         <h2>Doing</h2>
-        <div class="card" data-id="3" data-priority="medium" data-colum="doing">
+        <div class="card" data-id="3" data-priority="medium">
+          <!-- <div id="close"></div> -->
           <h3>Tâche 3</h3>
           <p>En cours de traitement</p>
         </div>
@@ -98,7 +100,8 @@
 
       <div class="column" data-status="done">
         <h2>Done</h2>
-        <div class="card" data-id="4" data-priority="high" data-colum="done">
+        <div class="card" data-id="4" data-priority="high">
+          <!-- <div id="close"></div> -->
           <h3>Tâche 4</h3>
           <p>Terminé</p>
         </div>
@@ -121,5 +124,6 @@
     <script src="addCard.js"></script>
     <script src="searchInput.js"></script>
     <script src="script.js"></script>
+    <script src="deleteCard.js"></script>
   </body>
 </html>
