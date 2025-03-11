@@ -48,3 +48,11 @@ h1 {
   margin: 5px;
   padding: 5px 10px;
 }
+
+.dragging {
+  opacity: 0.1;
+}
+
+.dragover {
+  border: 3px solid lightcoral;
+}
